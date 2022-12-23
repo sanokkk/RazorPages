@@ -1,0 +1,46 @@
+﻿@page "{id}"
+@model RazorPages.Pages.Employees.DetailsModel
+@{
+	ViewData["Title"] = "EmployeeDetails";
+	var photoPath = $"/img/{Model.employee.PhotoPath}";
+}
+
+<h1>Details</h1>
+
+<div class="row justify-content-center m-3">
+	<div class="col col-lg-8">
+		<div class="card">
+
+			<div class="card-header text-center">
+				<h1>@Model.employee.Name</h1>
+			</div>
+
+			<div class="card-body text-center">
+				<div class="row">
+					<div class="col col-lg-9">
+						<h4 class="card-text">ID: @Model.employee.Id</h4>
+						<h4 class="card-text">Email: @Model.employee.Email</h4>
+						<h4 class="card-text">Departement: @Model.employee.Department</h4>
+					</div>
+					<div class="col col-lg-3">
+						<div class="container">
+							<img class="card-img-top border border-primary" src="@photoPath"/>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col">
+						<div class="card-footer">
+							<a asp-page="Employees" class="btn btn-success m-1">Back</a>
+							<a href="#" class="btn btn-primary m-1">Edit</a>
+							<a href="#" class="btn btn-danger m-1">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

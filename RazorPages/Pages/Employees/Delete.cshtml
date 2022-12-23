@@ -1,0 +1,13 @@
+﻿@page "{id}"
+@model RazorPages.Pages.Employees.DeleteModel
+@{
+}
+<h1>Delete confirmation</h1>
+
+<div class="alert alert-danger">
+	<h5>Are you want to delete employee @Model.employee.Name</h5>
+	<form method="post">
+		<button type="submit" class="btn btn-danger">Yes</button>
+		<a asp-page="/Employees/Employees" class="btn btn-primary">No</a>
+	</form>
+</div>
